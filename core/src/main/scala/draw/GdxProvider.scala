@@ -14,6 +14,10 @@ trait GdxProvider {
     cam.position.set(cam.viewportWidth / 2f, cam.viewportHeight / 2f, 0)
     cam
   }
-  def getShapeRenderer() = new ShapeRenderer()
-  def getSpriteBatch() = new SpriteBatch()
+  def getShapeRenderer() = {
+    val shapeRenderer = new ShapeRenderer
+    shapeRenderer.setAutoShapeType(true)
+    shapeRenderer
+  }
+  def getSpriteBatch() = new SpriteBatch
 }

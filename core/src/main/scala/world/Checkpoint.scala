@@ -1,11 +1,9 @@
 package world
 
 import brols.Creator
+import com.badlogic.gdx.math.Vector2
 
-/**
-  * Created by julein on 29/07/16.
-  */
-case class Checkpoint(x: Int, y: Int)
+case class Checkpoint(pos: Vector2)
 
 object Checkpoint {
   val diameter = 600
@@ -17,7 +15,7 @@ object Checkpoint {
     if (nb < minCheckpoints || nb > maxCheckpoints)
       throw new IllegalArgumentException("Invalid number of checkpoints : " + nb + " min is : " + minCheckpoints + " max is : " + maxCheckpoints)
     List.tabulate(nb)(i =>
-      new Checkpoint(Creator.int(width), Creator.int(height))
+      new Checkpoint(new Vector2(Creator.int(width), Creator.int(height)))
     )
   }
 }
